@@ -1,5 +1,6 @@
 <?php
 
+ * Diese Datei legt einige Header für die Webseite fest, zum Beispiel den Etag-Header.
 require 'funktionen-neu.php';
 
 $file_last_mod_time = filemtime(__FILE__);
@@ -14,7 +15,6 @@ echo header("Cache-control: max-age=84600");
 /*
 * fügt Header mit eTag hinzu: ein unverwechselbares Merkmal für den Inhalt der Seite.
 */
-
 echo header('ETag: '.$etag);
 
 echo <<<EOT
@@ -25,6 +25,12 @@ echo <<<EOT
 EOT;
 
 
+/**
+ * wenn in der Variable $_SERVER das Feld 'HTTP_IF_NONE_MATCH' existiert und
+ * identisch mit dem Etag der Anfrage ist, wird der Header der Antwort auf 304 Not Modified gesetzt,
+ * die Daten haben sich nicht verändert und müssen nicht noch neu geschickt werden.
+ * Die Seite kann aus dem Cache geladen werden.
+ */
 if(isset($_SERVER['HTTP_IF_NONE_MATCH'])) {
     if($_SERVER['HTTP_IF_NONE_MATCH'] == $etag) {
         header('HTTP/1.1 304 Not Modified', true, 304);
@@ -33,8 +39,11 @@ if(isset($_SERVER['HTTP_IF_NONE_MATCH'])) {
 }
 
 
-
-
+/**
+ * diese Abfrage schaut in die Variable $_POST. Wenn dort noch keine Daten drin sind, bedeutet das, dass die Seite
+ * zum ersten Mal aufgerufen wird. Es wird ein Array mit Html-Tags für die Formularfelder erzeugt und der Funktion
+ * übergeben, die die Html-Seite mit dem Formular für die erste Seite erzeugt, übergeben.
+ */
 if (count($_POST) == 0) {
 
     $leereFelder = [
@@ -47,6 +56,13 @@ if (count($_POST) == 0) {
 
 }
 
+
+/** im Array $_POST sind schon Daten drin, vielleicht existiert sogar das Feld 'name' schon.
+ * die Funktion, die die Daten prüft und bei Korrektheit die dritte Seite des Formulars darstellt,
+ * wird aufgerufen
+ * ist das Feld 'name' noch nicht vorhanden, aber im Array $_POST ist schon etwas drin, wird die Funktion, die diese Daten
+ * überprüft und bei Korrektheit die zweite Seite des Formulars aufruft, ausgeführt
+*/
 else if (!isset($_POST['name'])) {
     pruefeReiseziele($_POST);
 } else {
