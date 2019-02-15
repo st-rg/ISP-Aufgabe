@@ -1,0 +1,492 @@
+/*googlefonts*/
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:400,700,900,400italic,700italic,900italic|Alice);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,900italic,900,700italic);
+
+
+/* steffi reeg css*/
+
+/*-----------------------------------------------------------------------------------------
+	 * allgemein
+	 * -----------------------------------------------------------------------------------*/
+
+@media screen {
+
+    *, figure {
+        margin: 0;	
+    }
+
+    fieldset {
+      -webkit-margin-start: 0;
+      -webkit-margin-end: 0;
+      -webkit-padding-before: 0;
+      -webkit-padding-start: 0;
+      -webkit-padding-end: 0;
+      -webkit-padding-after: 0;
+      border: none;
+      border-image-source: initial;
+      border-image-slice: initial;
+      border-image-width: initial;
+      border-image-outset: initial;
+      border-image-repeat: initial;
+      min-width: 0;
+    }
+
+    
+       body {
+        position: relative;
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        margin-top: 1em;
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+
+
+    /*-------------------------------------------------------------------------------------------
+         * klassen
+         * -------------------------------------------------------------------------------------*/
+
+
+    .rund {
+        border-radius: 50%;
+        text-align: center;
+    }
+
+    .uppercase {
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .roboto {
+        font-family: 'Roboto';
+        font-weight: 900;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+    }
+    
+    .zentriert {
+        margin: 0 auto 0 auto;
+    }
+
+/*
+    article:nth-child(2) {
+        border-style: none dotted none dotted;
+        border-width: 2px;
+        border-color: #EA5054;
+    }
+*/
+
+    .clearfix {
+        width: 100%;
+        margin: 0 auto 2em auto;
+    }
+
+    .clearfix:after {
+        visibility: hidden;
+        display: block;
+        content: "";
+        clear: both;
+        height: 0;
+    }
+
+/*
+    .clearfix:nth-child(2) {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border-top-style: dotted;
+        border-bottom-style: dotted;
+        border-width: 2px;
+        border-color: lightpink;	
+    }
+*/
+    
+    .inline-block-center {
+        text-align: center;
+    }
+
+    .float {
+        float: left;
+    }
+
+    .float h3 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+  
+    .rot {
+        color: deeppink;
+    }
+
+    .vietnam_orte_images {
+        position: relative;
+        width: 100%;
+    }
+    
+    .linie {
+        display: block;
+        height: 4em;
+        max-width: 25em;
+        border-bottom: 1px solid gainsboro;
+    }
+    
+    .print {
+        display: none;
+    }
+    
+    .button {
+        position: relative;
+        display: block;
+        margin-left: 1em;
+        margin-top: 2em;
+        color: white;
+        background-color: rgb(241, 180, 169);
+        height: 5em;
+        width: 5em;
+        z-index: 2;
+     }
+    
+  
+
+    /*-----------------------------------------------------------------------------------------
+         * Headlines, Links, Absätze und Listen
+         * -----------------------------------------------------------------------------------*/
+
+
+    /* 
+     * font-style playfair Display zuordnen
+     */
+    
+    h2, h3, h4, textarea, #sendenbtn, fieldset input, select {
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+    }
+
+    h1 {
+        display: block;
+        font-family: 'Playfair Display', serif;
+        font-weight: 200;
+        text-align: left;
+        font-size: 6em;
+        line-height: 85%;
+        letter-spacing: 0.06em;
+        color: deeppink;
+        margin-left: 0.1em;
+    }
+
+    h2 {
+        font-size: 2em;
+        margin-top: 0;
+        margin-bottom: 1em;
+    }
+
+    h3 {
+        font-size: 1em;
+        display: block;
+        text-align: center;
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+    }
+
+    h4 {
+        /*font-style: italic;*/
+        font-size: 0.8em;
+        font-weight: 200;
+        color: gray;
+        text-align: center;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    a, a:visited, a:link {
+        color: black;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    p {
+        line-height: 140%;
+        max-width: 35em;
+    }
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    figcaption {
+        position: relative;
+        margin-top: 0.3em;
+        font-style: italic;
+        text-align: center;
+        color: black;
+        height: 2em;
+    }
+
+    img {
+        display: block; 
+        margin: 0 auto 0 auto;
+        z-index: -1;
+    }
+
+    /*-----------------------------------------------------------------------------------------
+     * ids für body und wrapper div
+     * ---------------------------------------------------------------------------------------*/
+
+    /*
+     * hallonav id für body, wird als target verwendet. steuert aussehen der navigation
+     */
+    
+ 
+    #wrapper {
+        display: block;
+        position: relative;
+        margin: 0 auto 0 auto;
+        max-width: 70em;
+        top: 0;
+        z-index: 0;
+        background-color: white;
+    }
+
+    /*-----------------------------------------------------------------------------------------
+     * header und navigation
+     * ----------------------------------------------------------------------------------------*/
+
+    #header {
+        display: block;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        max-width: 70em;
+        height: 9em;
+        z-index: 3;
+        background-color: white;
+    }
+
+    header img {
+        position: relative;
+        display: block;
+        float: left;
+        width: 8em;
+        margin: 1em 0 0 0.5em;
+    }
+    
+    
+    #logo {
+        color: rgb(233, 79, 83);
+     }
+    
+    
+    #navigation {
+        display: block;
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: 2em;
+        padding-top: 2em;
+        z-index: 3;
+    }
+    
+    nav {
+        display: block;
+		position: relative;
+        top: 0;
+        z-index: 2;
+    }
+    
+    ul {
+        display: block;
+        position: relative;
+        float: right;
+/*        width: 29em;*/
+   }
+
+
+    #navigation nav li a {
+        color: black;
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+    
+    nav li {
+		width: 7em;
+        display: inline-block;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}
+	
+	nav a {
+		padding: 0;
+	}
+
+	
+
+ 
+     
+    /* ================= formular ===================== */
+    
+    
+    #formular {
+        position: relative;
+/*        background-color: aquamarine;*/
+    }
+    
+    #game-headline {
+        color: rgb(241, 180, 169);
+    }
+    
+    form {
+        position: relative;
+        display: block;
+        background-repeat: no-repeat;
+        background-position: center top;
+        height: 60em;
+    }
+
+    fieldset {
+        position: relative;
+        display: block;
+        width: 25em;
+        margin-top: 1em;
+        border: 0;
+    }
+    
+    legend {
+        font-size: 0.8em;
+        padding-left: 5em;
+        text-align: left;
+    }
+
+    label {
+        font-size: 0.8em;
+/*        font-style: italic;*/
+        display: block;
+        width: 10em;
+        padding-top: 0.8em;
+        padding-right: 1em;
+        text-align: left;
+        position: absolute;
+        left: 0;
+    }
+
+    #nachricht label {
+        position: absolute;
+        margin-top: 0em;
+        width: 15em;
+    }
+
+    input, textarea {
+        font-size: 0.8em;
+/*        font-style: italic;*/
+        display: block;
+        border: 0;
+        width: 25em; 
+        margin-top: 0.5em;
+        margin-left: 11em;
+        padding-left: 0.5em;
+        background-color: whitesmoke;
+        height: 2em;
+    }
+
+    #auswahl {
+        position: relative;
+        margin-top: 0.5em;
+        margin-left: auto;
+        margin-right: -0.3em;
+        width: 15em;
+        z-index: 2;
+    }
+
+    textarea {
+        width: 25em;
+/*
+        padding: 1em;
+        height: 15em;
+*/
+    }
+
+  
+    
+
+        
+    
+    
+    /*------------------------------------------------------------------------------------------
+     * footer
+     * ----------------------------------------------------------------------------------------*/
+
+    footer {
+        display: block;
+        position: relative;
+        height:3em;
+        background-color: rgb(241, 180, 169);
+        padding-top: 3em;
+        padding-left: 2em;
+        color: white;
+    }
+    
+}
+
+
+/*------------------------------------------------------------------------------------------------------------------------
+ * Print
+ * ------------------------------------------------------------------------------------------------------------------------*/
+
+@media print {
+
+    h1, nav, footer, img, aside, figure, #vietnam-teaser, .screen {
+        display: none;
+    }
+    
+    header:after {
+        content: "www.meineseite.de";
+    }
+    
+    .print {
+        display: block;
+        width: 300px;
+    }
+    
+    page {
+        margin: 2em;
+    }
+      
+    body {
+        font: 12pt Georgia Times New Roman Times serif;
+        line-height: 1.5;
+    }
+    
+    a[href^="http://"]:after {
+    content: ''attr(href)'';
+    }
+    
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    #game, #rezeptvideos {
+        display: none; 
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
